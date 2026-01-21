@@ -1,0 +1,17 @@
+<h2>Todos los posts</h2>
+<section *ngIf="!error && !loading">
+  <article *ngFor="let post of filteredPosts">
+    <p>{{ post.title }}</p>
+    <p>{{ post.body }}</p>
+    <button [id]="post.id" (click)="eliminarPost($event)">Eliminar</button>
+  </article>
+
+</section>
+
+<section *ngIf="loading">
+  <p>Cargando...</p>
+</section>
+
+<section *ngIf="error">
+  <p>Error al cargar la base de datos</p>
+</section>

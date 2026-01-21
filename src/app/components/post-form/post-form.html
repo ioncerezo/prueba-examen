@@ -1,0 +1,15 @@
+<section (input)="validarForm()" >
+  <form (submit)="crearPost()">
+    <label for="titulo">titulo:</label>
+    <input  type="text" [(ngModel)]="formulario.title" name="titulo" id="titulo" />
+
+    <label for="body">body:</label>
+    <textarea  [(ngModel)]="formulario.body" name="body" id="body"></textarea>
+
+    <label for="userId">ID de usuario:</label>
+    <input  type="number" [(ngModel)]="formulario.userId" name="userId" id="userId" />
+
+    <button [disabled]="!formValido">Enviar</button>
+  </form>
+  <p>{{feedback}}</p>
+</section>
